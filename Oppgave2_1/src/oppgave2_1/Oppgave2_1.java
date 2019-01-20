@@ -18,6 +18,8 @@ public class Oppgave2_1 {
         checkMail(email6);
         String[] test = email6.split("@");
         System.out.println(test.length);
+        
+        
     }
     
     
