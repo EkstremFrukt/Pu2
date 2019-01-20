@@ -18,7 +18,8 @@ public class Oppgave2_1 {
         checkMail(email6);
         String[] test = email6.split("@");
         System.out.println(test.length);
-        
+        int abc = Test.testAdd(14141,2);
+        System.out.println(abc);
         
     }
     
@@ -70,5 +71,11 @@ public static void checkMail(String email) {
         }
     }       
 }
-    
+    class Test {
+        
+        public static int testAdd(int a, int b) {
+            int c = a + b;
+            return c;
+        }
+    }
 
