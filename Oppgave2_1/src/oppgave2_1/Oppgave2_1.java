@@ -8,7 +8,7 @@ public class Oppgave2_1 {
         String email3 = "henrik.lieng@oslomet.no";
         String email4 = "so_bad!@oslomet.no";
         String email5 = "thisIsNoEMail";
-        String email6 = "s232323@oslomet.no";
+        String email6 = "s232323@oslomet@.no";
 
         checkMail(email1);
         checkMail(email2);
@@ -16,7 +16,7 @@ public class Oppgave2_1 {
         checkMail(email4);
         checkMail(email5);
         checkMail(email6);
-        String[] test = email2.split("@");
+        String[] test = email6.split("@");
         System.out.println(test.length);
     }
     
@@ -24,13 +24,17 @@ public class Oppgave2_1 {
 public static int checkValidOsloMetMail(String email) {
     
     String[] splitStrAlpha = email.split("@");
+    
+    // Sjekker om det bare er 1 @ i mailen.
     if (splitStrAlpha.length != 2)
         return -1; // ERROR CODE 1: string is not a valid email
-
+    
+    // Sjekker om stringen etter splitten på @ er en oslomet.no mail.
     if(!splitStrAlpha[1].equals("oslomet.no")) {
         return -2; // ERROR CODE 2: string is not a valid OsloMet email
     }
 
+    // Sjekker om første bokstav er s og resten før @ er av lengden på 7 tegn.
     String studentStr = splitStrAlpha[0];
     if(studentStr.length() != 7 || studentStr.charAt(0) != 's') {
         return -3; // ERROR CODE 3: email is not a valid student OsloMet email
