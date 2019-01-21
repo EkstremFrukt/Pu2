@@ -9,18 +9,13 @@ public class Oppgave2_1 {
         String email4 = "so_bad!@oslomet.no";
         String email5 = "thisIsNoEMail";
         String email6 = "s232323@oslomet@.no";
-
+        
         checkMail(email1);
         checkMail(email2);
         checkMail(email3);
         checkMail(email4);
         checkMail(email5);
-        checkMail(email6);
-        String[] test = email6.split("@");
-        System.out.println(test.length);
-        int abc = Test.testAdd(14141,2);
-        System.out.println(abc);
-        
+        checkMail(email6);      
     }
     
     
@@ -71,11 +66,6 @@ public static void checkMail(String email) {
         }
     }       
 }
-    class Test {
-        
-        public static int testAdd(int a, int b) {
-            int c = a + b;
-            return c;
-        }
+
     }
 
