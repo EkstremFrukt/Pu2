@@ -44,7 +44,7 @@ public class Oppgave2_1 {
         
 
         checkMail(email1);
-
+        
     }
     
 public static int checkValidOsloMetMail(String email) {
