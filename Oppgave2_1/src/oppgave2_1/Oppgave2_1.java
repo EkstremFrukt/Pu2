@@ -1,37 +1,75 @@
 package oppgave2_1;
 
-class InvalidEmailException extends Exception {
+class InvalidEmailException extends Exception {   
+    InvalidEmailException(String msg) {
+        super(msg);
+    }
     
+    static int atChecker(int length) throws InvalidEmailException {
+        if (length != 2) {
+            throw new InvalidEmailException("");
+        }
+        else return -1;
+    } 
 }
 class InvalidOsloMetEmailException extends InvalidEmailException{
+    InvalidOsloMetEmailException(String msg) {
+        super(msg);
+    }
+    
+    static int lastChecker(String secondPart) throws InvalidEmailException {
+        if (!"oslomet.no".equals(secondPart)) {
+            throw new InvalidEmailException("");
+        }
+        else return -2;
+    }
     
 }
 class InvalidStudentOsloMetEmailException extends InvalidOsloMetEmailException{
+    InvalidStudentOsloMetEmailException(String msg) {
+        super(msg);
+    }
     
 }
 
 public class Oppgave2_1 {
 
     public static void main(String[] args) {
-        String email1 = "s123456@hioa.no";
+        String email1 = "s123456@oslomet.no";
         String email2 = "s123456@oslomet.no";
         String email3 = "henrik.lieng@oslomet.no";
         String email4 = "so_bad!@oslomet.no";
         String email5 = "thisIsNoEMail";
         String email6 = "s232323@oslomet@.no";
         
+
         checkMail(email1);
-        checkMail(email2);
-        checkMail(email3);
-        checkMail(email4);
-        checkMail(email5);
-        checkMail(email6);      
+
     }
-    
     
 public static int checkValidOsloMetMail(String email) {
     
     String[] splitStrAlpha = email.split("@");
+    int a = splitStrAlpha.length;
+    String secondPart = splitStrAlpha[1];
+
+    
+    try{
+        InvalidEmailException.atChecker(a);
+    }
+    catch(InvalidEmailException e) {
+        System.err.println("Feil med @");
+    }
+    
+    try{
+        InvalidOsloMetEmailException.lastChecker(secondPart);
+    }
+    catch(InvalidEmailException e) {
+        System.err.println("Må slutte på @oslomet.no");
+    }
+    
+
+    
     
     // Sjekker om det bare er 1 @ i mailen.
     if (splitStrAlpha.length != 2)
