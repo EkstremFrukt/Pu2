@@ -1,5 +1,15 @@
 package oppgave2_1;
 
+class InvalidEmailException extends Exception {
+    
+}
+class InvalidOsloMetEmailException extends InvalidEmailException{
+    
+}
+class InvalidStudentOsloMetEmailException extends InvalidOsloMetEmailException{
+    
+}
+
 public class Oppgave2_1 {
 
     public static void main(String[] args) {
@@ -67,5 +77,5 @@ public static void checkMail(String email) {
     }       
 }
 
-    }
+  
 
