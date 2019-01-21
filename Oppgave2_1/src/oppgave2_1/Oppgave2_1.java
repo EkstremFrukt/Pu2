@@ -7,7 +7,7 @@ class InvalidEmailException extends Exception {
     
     static int atChecker(int length) throws InvalidEmailException {
         if (length != 2) {
-            throw new InvalidEmailException("");
+            throw new InvalidEmailException("Kjempetullebukkenmin");
         }
         else return -1;
     } 
@@ -19,7 +19,7 @@ class InvalidOsloMetEmailException extends InvalidEmailException{
     
     static int lastChecker(String secondPart) throws InvalidEmailException {
         if (!"oslomet.no".equals(secondPart)) {
-            throw new InvalidEmailException("");
+            throw new InvalidEmailException("tullebukk");
         }
         else return -2;
     }
@@ -35,7 +35,7 @@ class InvalidStudentOsloMetEmailException extends InvalidOsloMetEmailException{
 public class Oppgave2_1 {
 
     public static void main(String[] args) {
-        String email1 = "s123456@oslomet.no";
+        String email1 = "s1234@56@oslomet.nos";
         String email2 = "s123456@oslomet.no";
         String email3 = "henrik.lieng@oslomet.no";
         String email4 = "so_bad!@oslomet.no";
@@ -58,14 +58,14 @@ public static int checkValidOsloMetMail(String email) {
         InvalidEmailException.atChecker(a);
     }
     catch(InvalidEmailException e) {
-        System.err.println("Feil med @");
+        System.err.println(e.getMessage());
     }
     
     try{
         InvalidOsloMetEmailException.lastChecker(secondPart);
     }
     catch(InvalidEmailException e) {
-        System.err.println("Må slutte på @oslomet.no");
+        System.err.println(e.getMessage());
     }
     
 
