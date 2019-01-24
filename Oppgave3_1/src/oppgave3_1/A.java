@@ -1,7 +1,7 @@
 package oppgave3_1;
 
 public class A implements Cloneable {
-    int tall = 5;
+    int tall = 3;
     
     @Override
     public A clone() {

@@ -6,12 +6,9 @@ public class Oppgave3_1 {
         A one = new A();
         A two = (A) one.clone();
         
-        
-        
-        two.tall++;
+        two.tall += 5;
         
         System.out.println(one);
         System.out.println(two);
     }
-    
 }
