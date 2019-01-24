@@ -5,14 +5,19 @@ public class SuperKlasse implements Cloneable {
     int superTall = 5;
     
     @Override
-    public Object clone() throws CloneNotSupportedException {
-        SuperKlasse kopiert = new SuperKlasse();
-        kopiert.superTall = (int) super.clone();      
+    public Object clone() {
+        SuperKlasse kopiert = null;
+        try {
+            kopiert = (SuperKlasse) super.clone();
+        } catch (CloneNotSupportedException  e) {
+            e.printStackTrace();
+            return null;
+        }     
         return kopiert;
     }
     
+    @Override
     public String toString() {
         return ("" + superTall);
-    }
-    
+    }  
 }

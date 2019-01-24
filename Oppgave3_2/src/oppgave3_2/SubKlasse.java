@@ -5,12 +5,13 @@ public class SubKlasse extends SuperKlasse implements Cloneable {
     int mittTall = 5;
 
     @Override
-    public Object clone() throws CloneNotSupportedException {
-        SubKlasse kopiert = new SubKlasse();
-        kopiert.mittTall = (int) super.clone();       
+    public Object clone() {
+        SubKlasse kopiert = null;
+        kopiert = (SubKlasse) super.clone();     
         return kopiert;
-    }
+    } 
     
+    @Override
     public String toString() {
         return "" + mittTall;
     }
