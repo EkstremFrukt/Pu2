@@ -8,18 +8,20 @@ public class Animal {
     String type;
     int[] info;
     
-
     public Animal () {}
 
     public Animal(Animal source) {
         this.type = source.type;
-        int a = info.length;
-                
-
+        int a = source.info.length;
+        this.info = new int[a];
+            
+        for (int i = 0; i < a; i++) {
+            this.info[i] = source.info[i];
+        }            
     }
 
     @Override
     public String toString() {
-        return "Type of animal: " + type + Arrays.toString(info);
+        return "Type of animal: " + type + " " + Arrays.toString(info);
     }
 }
