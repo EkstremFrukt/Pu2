@@ -11,6 +11,7 @@ package oppgave2_1;
     }
         
     public static void checkMail(String email) {
+        
         String[] splitStrAlpha = email.split("@");
         int length = splitStrAlpha.length;
         String secondPart = splitStrAlpha[1];

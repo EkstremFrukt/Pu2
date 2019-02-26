@@ -16,6 +16,7 @@ public class Dog extends Animal{
     }
     
     public Dog(Dog source) {
+        super(source);
         this.name = source.name;
         this.type = source.type;
         this.info = new int[source.info.length];

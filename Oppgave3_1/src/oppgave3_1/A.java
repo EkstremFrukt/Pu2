@@ -7,7 +7,7 @@ public class A implements Cloneable {
     public A clone() {
         try {
             A a = (A) super.clone();
-            return a;
+            
         } catch(CloneNotSupportedException e) {
             e.printStackTrace();
             return null;
