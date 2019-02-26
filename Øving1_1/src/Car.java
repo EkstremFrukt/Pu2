@@ -25,6 +25,7 @@ public class Car implements Comparable<Car>{
 
     @Override
     public int compareTo(Car o) {
+        //return Integer.compare(this.getAge(), o.age);
         return this.getManufacturer().compareTo(o.manufacturer);     
     }  
 }
