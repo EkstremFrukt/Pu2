@@ -16,7 +16,7 @@ public class Oppgave4_7 {
 
        image.drawPixels(Oppgave4_7::gradientRedBlue);
 
-       image.writeImageToFile("src/ukesoppgaver/alternative/stiler/oppgave7/gradientimage", "png");
+       image.writeImageToFile("src/", "png");
     }
 }
 
